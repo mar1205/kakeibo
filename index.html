@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>家計簿アプリ　ー　簡単な支出管理</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>家計簿アプリ</h1>
+      <p class="subtitle">シンプルな支出管理ツール</p>
+
+      <div class="summary">
+        <span>今月の支出合計: </span>
+        <span id="total">¥0</span>
+      </div>
+
+      <form id="expense-form">
+        <input
+          type="text"
+          id="expense-name"
+          placeholder="項目名（食費）"
+          required
+        />
+        <input
+          type="number"
+          id="expense-amount"
+          placeholder="金額"
+          required
+          min="1"
+        />
+        <select id="expense-category" required>
+          <option value="">カテゴリを選択</option>
+          <option value="食費">食費</option>
+          <option value="交通費">交通費</option>
+          <option value="娯楽">娯楽</option>
+          <option value="その他">その他</option>
+        </select>
+        <button type="submit">追加</button>
+      </form>
+      <!-- 出費リスト -->
+      <ul id="expense-list"></ul>
+
+      <!-- ステータスメッセージ -->
+      <p id="status-message"></p>
+    </div>
+
+    <!-- Firebase の　SDK -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
